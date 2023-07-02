@@ -7,15 +7,23 @@ public class BulletMovement : MonoBehaviour
 {
     private float _bulletSpeed = 5f;
     [SerializeField] private PolygonCollider2D _bulletCollider2D;
-    
+    public float _spawnPoint;
+
+    [SerializeField] private float _shotRange = 30f;
+
+    void Start()
+    {
+        _spawnPoint = transform.position.x;
+    }
 
     void FixedUpdate()
     {
         // SHOOT BULLET
         transform.Translate(new Vector3(4f,0f,0f) *_bulletSpeed * Time.deltaTime);
+        float distance = Mathf.Abs(transform.position.x - _spawnPoint);
 
         // DESTROY - if certain distance is reached 
-        if(transform.position.x > 20f)
+        if(distance > _shotRange)
         {
             Destroy(gameObject);
         }

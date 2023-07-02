@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2094237981821604375}
   - component: {fileID: 2094237981821604372}
   - component: {fileID: -281824711275455078}
+  - component: {fileID: 966536565703837852}
   m_Layer: 0
   m_Name: WebPrefab
-  m_TagString: Untagged
+  m_TagString: DamagePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3297819
   m_Center: {x: -0.11504376, y: 0, z: 0}
+--- !u!114 &966536565703837852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094237981821604373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e1568fe192e4ec58858b8f6dff0d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _webCollider2D: {fileID: 0}
+  _spawnPoint: {x: 0, y: 0}
+  _currentLocation: {x: 0, y: 0}
+  _shotRange: {x: 30, y: 0}
