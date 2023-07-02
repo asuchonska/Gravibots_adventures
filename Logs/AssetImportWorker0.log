@@ -5193,3 +5193,9 @@ Received Import Request.
   path: Assets/Prefabs/Characters/Player/PlayerPrefab.prefab
   artifactKey: Guid(4f8a48ca58f09462499f15ecd11a52e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/Characters/Player/PlayerPrefab.prefab using Guid(4f8a48ca58f09462499f15ecd11a52e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bec04c456578bf60b43e9a130ff60bec') in 0.938220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 247.346353 seconds.
+  path: Assets/Prefabs/Characters/Player/PlayerPrefab.prefab
+  artifactKey: Guid(4f8a48ca58f09462499f15ecd11a52e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/Player/PlayerPrefab.prefab using Guid(4f8a48ca58f09462499f15ecd11a52e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72739ac74109a3d488433c0001996f25') in 0.577596 seconds 
