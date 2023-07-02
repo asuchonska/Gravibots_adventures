@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
 {
     // Components
     [SerializeField] private Rigidbody2D RB;
-    [SerializeField] private Animator _animator; 
+    [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject _firePoint;
     
     // Movement
+    private float _walk;
     [SerializeField] private float _moveSpeed = 10f;
     private float _horizontalInput;
     public bool movingRight = true;
@@ -39,6 +41,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Updating animator component
+        _animator.SetFloat("speed", _walk);
+        _animator.SetBool("isGrounded", isGrounded);
+        
+        
         GetMovementInput();
     }
 
@@ -68,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            _animator.SetTrigger("gravityChange");
             RB.gravityScale = -RB.gravityScale;
             gravityIsReversed = !gravityIsReversed;
             float reverseX = Mathf.Abs(transform.rotation.x) - 180;
@@ -76,7 +84,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
+            FiringBullets();
+            _animator.SetTrigger("shooting");
         }
 
 
@@ -92,12 +101,29 @@ public class PlayerController : MonoBehaviour
     
     private void Movement()
     {
-        float walk = Mathf.Abs(_horizontalInput); // To fix walking after rotation
-        transform.Translate(Vector3.right * Time.deltaTime * _moveSpeed * walk);
-        _animator.SetFloat("speed", walk);
+        _walk = Mathf.Abs(_horizontalInput); // To fix walking after rotation
+        transform.Translate(Vector3.right * Time.deltaTime * _moveSpeed * _walk);
 
     }
 
+    private void FiringBullets()
+    {
+        Quaternion bulletRotation = Quaternion.Euler(0f, 0f, 180f);
+        if (movingRight)
+        {
+            // Instantiate bullet without rotation change
+            Instantiate(_bulletPrefab, _firePoint.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // Instantiate bullet with rotation change (180 degrees on z axis)
+            Instantiate(_bulletPrefab, _firePoint.transform.position, bulletRotation);
+        }
+        _nextFireTime = Time.time + _fireCoolDownTime;
+        
+    }
+    
+    
     
     private void OnTriggerStay2D(Collider2D collision)
     {
