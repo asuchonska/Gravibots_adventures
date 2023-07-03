@@ -33,7 +33,12 @@ public class WebScript : MonoBehaviour
     {
         if (_webCollider2D.isTrigger && other.gameObject.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+        }
+        if (_webCollider2D.isTrigger && other.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            other.gameObject.GetComponent<PlayerHealth>().Damage();
         }
     }
     

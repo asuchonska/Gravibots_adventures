@@ -8,6 +8,7 @@ TagManager:
   - DamagePoint
   - Logic
   - GameLogic
+  - Bullet
   layers:
   - Default
   - TransparentFX

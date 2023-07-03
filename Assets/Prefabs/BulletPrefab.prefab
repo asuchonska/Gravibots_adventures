@@ -148,4 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d127a1bb48d0d47cc913a1323473c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletCollider2D: {fileID: 0}
+  _bulletCollider2D: {fileID: 5362908181342519144}
+  _spawnPoint: 0
+  _shotRange: 30

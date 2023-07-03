@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     private int _lives = 5; // Lives
     [SerializeField] private Collider2D playerCollider;
     [SerializeField] private UIManager _uiManager;
+    [SerializeField] private Animator _animator;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     }
     
     
-    private void Damage()
+    public void Damage()
     {
         _lives --;
         _uiManager.UpdateLives(_lives);
@@ -44,6 +45,13 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.CompareTag("DamagePoint"))
         {
             Damage();
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Debug.Log("Jest olej ");
+            _animator.SetTrigger("Motorol"); 
+            _logic.TheEnd();
         }
     }
 }

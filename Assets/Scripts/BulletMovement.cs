@@ -35,5 +35,11 @@ public class BulletMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (_bulletCollider2D.isTrigger && other.gameObject.CompareTag("DamagePoint"))
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
