@@ -30,7 +30,6 @@ public class MenuLogic : MonoBehaviour
     
     public void QuitGame()
     {
-        Debug.Log("QUIT");
         Application.Quit();
     }
 

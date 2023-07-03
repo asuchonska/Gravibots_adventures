@@ -30,12 +30,8 @@ public class PlayerHealth : MonoBehaviour
         _lives --;
         _uiManager.UpdateLives(_lives);
         
-        Debug.Log("Damage" + _lives);
-
         if (_lives == 0)
         {
-            // GameController.GameOver();
-            Debug.Log("Death");
             _logic.GameOver();
         }
     }
@@ -49,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
 
         if (other.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("Jest olej ");
             _animator.SetTrigger("Motorol"); 
             _logic.TheEnd();
         }

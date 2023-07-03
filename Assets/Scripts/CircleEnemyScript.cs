@@ -16,7 +16,6 @@ public class CircleEnemyScript : MonoBehaviour
     private float _lastChangeDirection;
 
     
-    // Start is called before the first frame update
     void Start()
     {
         visionCollider2D = GetComponentInChildren<BoxCollider2D>();

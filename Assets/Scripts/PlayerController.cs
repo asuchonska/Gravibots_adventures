@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private bool isGrounded = false; // To check if the player can jump
     
     // Gravity
-    private float _gravityScale; // CZY POTZREBNE???
     public bool gravityIsReversed = false;
     
     

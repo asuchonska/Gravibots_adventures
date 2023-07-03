@@ -10,7 +10,7 @@ public class WebScript : MonoBehaviour
     public Vector2 _currentLocation;
 
     [SerializeField] private Vector2 _shotRange = new Vector2(30f,0f);
-    // Start is called before the first frame update
+
     void Start()
     {
         _spawnPoint = new Vector2(transform.position.x, transform.position.y);
