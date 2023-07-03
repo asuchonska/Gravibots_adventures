@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Lives
-    private int _lives = 5;
+    private LogicScript _logic;
+    private int _lives = 5; // Lives
     [SerializeField] private Collider2D playerCollider;
     [SerializeField] private UIManager _uiManager;
 
     void Start()
     {
+        _logic = GameObject.FindGameObjectWithTag("GameController").GetComponent<LogicScript>();
         _uiManager.UpdateLives(_lives);
     }
     
@@ -21,11 +22,7 @@ public class PlayerHealth : MonoBehaviour
     {
        
     }
-
-    private void PlayerDeath()
-    {
-        Debug.Log("Player Died!!!");
-    }
+    
     
     private void Damage()
     {
@@ -36,7 +33,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (_lives == 0)
         {
+            // GameController.GameOver();
             Debug.Log("Death");
+            _logic.GameOver();
         }
     }
 

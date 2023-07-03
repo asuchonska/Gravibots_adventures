@@ -5,7 +5,7 @@ using UnityEngine;
 public class WebScript : MonoBehaviour
 {
     private float _webSpeed = 5f;
-    [SerializeField] private SphereCollider _webCollider2D;
+    [SerializeField] private CircleCollider2D _webCollider2D;
     public Vector2 _spawnPoint;
     public Vector2 _currentLocation;
 
